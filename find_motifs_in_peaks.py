@@ -1,7 +1,7 @@
 import sys
 
 '''
-Program is to correlate the identified motifs from RSAT to which peaks 
+Program is to correlate the identified motifs from RSAT to which peaks
 the motif resides in and output that to a table that can be sorted and viewed.
 
 Author: Debbie Thurtle-Schmidt
@@ -129,10 +129,13 @@ def main():
                         'dyads_m2' : 4, 'dyads_m4' : 4, 'dyads_m3' : 4, 'dyads_m5' : 4,
                         'dyads_m6' : 4, 'dyads_m8' : 4, 'oligos_6nt_mkv3_m3' : 4,
                         'oligos_7nt_mkv4_m10' : 5, 'oligos_6nt_mkv3_m9' : 5, k}
+                        #this should be made into a function so that can be more
+                        #generalizable.
     peak_motif_table = motifs_in_peaks(peak_list, motif_list, motif_dictionary)
     motif_header = ['peak_name', 'cluster_1', 'cluster_2' , 'cluster_3', 'cluster_4',
                     'cluster_5', 'nhr-48', 'Y67B8A.3/fkh-6',
                     'irx-1/daf-16', 'nhr-23', 'klf-2', 'rest']
+                    #This should be made into a function with an input file.
     peak_motif_table_file = []
     for entry in peak_motif_table:
         peak_motif_table_file.append('\t'.join(entry) + '\n')
